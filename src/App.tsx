@@ -1,26 +1,11 @@
 import { useState } from "react";
 import type { BoardTypes } from "./types/boardTypes";
+import { boardFakeData } from "./constants/fakeData";
 import Board from "./components/Board";
 import Button from "./components/Button";
 
 function App() {
-  const [boardData, setBoardData] = useState<BoardTypes>({
-    name: "Work",
-    columns: [
-      {
-        id: 0,
-        title: "Todo",
-        cards: [
-          {
-            id: 0,
-            title: "task title",
-            description: "What exactly has to be done, or in more details",
-            badges: ["new", "fast"],
-          },
-        ],
-      },
-    ],
-  });
+  const [boardData, setBoardData] = useState<BoardTypes>(boardFakeData);
   const [inputValue, setInputValue] = useState("");
 
   return (
