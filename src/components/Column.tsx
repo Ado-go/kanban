@@ -9,18 +9,16 @@ type ColumnProps = {
 export default function Column({ title, cardsData }: ColumnProps) {
   return (
     <div className="border-2">
-      <h1>{title}</h1>
-      <div>
-        {cardsData.map((card) => (
-          <div key={card.id}>
-            <Card
-              title={card.title}
-              description={card.description}
-              badges={card.badges}
-            />
-          </div>
-        ))}
-      </div>
+      <h1 className="text-center bg-gray-700">{title}</h1>
+      {cardsData.map((card) => (
+        <div key={card.id}>
+          <Card
+            title={card.title}
+            description={card.description}
+            badges={card.badges}
+          />
+        </div>
+      ))}
     </div>
   );
 }
