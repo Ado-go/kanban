@@ -3,7 +3,7 @@ import Column from "./Column";
 
 export default function Board({ name, columns }: BoardTypes) {
   return (
-    <div className="bg-gray-600 m-5 h-150 flex flex-col">
+    <div className="bg-gray-600 h-150 flex flex-col">
       <h1 className="p-3 font-bold">{name}</h1>
       <div className="h-full border">
         {columns.map((column) => (
