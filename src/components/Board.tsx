@@ -1,16 +1,11 @@
-import type { ColumnDataType } from "../types/columnTypes";
+import type { BoardTypes } from "../types/boardTypes";
 import Column from "./Column";
 
-type BoardProps = {
-  name: string;
-  columns: ColumnDataType[];
-};
-
-export default function Board({ name, columns }: BoardProps) {
+export default function Board({ name, columns }: BoardTypes) {
   return (
-    <div>
-      <h1>{name}</h1>
-      <div>
+    <div className="bg-gray-600 m-5 h-150 flex flex-col">
+      <h1 className="p-3 font-bold">{name}</h1>
+      <div className="h-full border">
         {columns.map((column) => (
           <Column
             key={column.id}
