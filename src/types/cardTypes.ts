@@ -1,10 +1,8 @@
-import type { StatusType } from "./statusType";
-
 type CardDataType = {
   id: number;
   title: string;
   description: string;
-  status: StatusType;
+  badges: string[];
 };
 
 export type { CardDataType };
