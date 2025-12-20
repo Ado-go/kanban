@@ -16,7 +16,7 @@ export default function Column({ title, cardsData }: ColumnProps) {
             <Card
               title={card.title}
               description={card.description}
-              status={card.status}
+              badges={card.badges}
             />
           </div>
         ))}
