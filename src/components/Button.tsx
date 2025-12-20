@@ -4,5 +4,12 @@ type ButtonProps = {
 };
 
 export default function Button({ text, handleClick }: ButtonProps) {
-  return <button onClick={() => handleClick()}>{text}</button>;
+  return (
+    <button
+      className="p-2 border rounded cursor-pointer bg-gray-600 hover:invert transition"
+      onClick={() => handleClick()}
+    >
+      {text}
+    </button>
+  );
 }
