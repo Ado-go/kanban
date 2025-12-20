@@ -8,7 +8,7 @@ type ColumnProps = {
 
 export default function Column({ title, cardsData }: ColumnProps) {
   return (
-    <div>
+    <div className="border-2">
       <h1>{title}</h1>
       <div>
         {cardsData.map((card) => (
