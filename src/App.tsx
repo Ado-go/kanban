@@ -1,12 +1,13 @@
 import { useState } from "react";
+import Board from "./components/Board";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [boardData, setBoardData] = useState([]);
 
   return (
     <>
       <h1>Kanban-ana</h1>
-      <button onClick={() => setCount(count + 1)}>banana count: {count}</button>
+      <Board name="Work" columns={boardData} />
     </>
   );
 }
