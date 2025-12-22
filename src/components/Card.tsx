@@ -12,7 +12,7 @@ export default function Card({ title, description, badges }: CardProps) {
       <h1 className="text-center bg-gray-700">{title}</h1>
       <div className="p-2 flex gap-2">
         {badges.map((badge) => (
-          <Badge badgeName={badge} />
+          <Badge key={badge} badgeName={badge} />
         ))}
         <div className="cursor-pointer select-none">+</div>
       </div>
