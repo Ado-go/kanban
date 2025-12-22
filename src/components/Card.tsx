@@ -14,7 +14,6 @@ export default function Card({ title, description, badges }: CardProps) {
         {badges.map((badge) => (
           <Badge key={badge} badgeName={badge} />
         ))}
-        <div className="cursor-pointer select-none">+</div>
       </div>
       <p className="p-2 w-80">{description}</p>
     </div>

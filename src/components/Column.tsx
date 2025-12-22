@@ -1,4 +1,5 @@
 import type { CardDataType } from "../types/cardTypes";
+import Button from "./Button";
 import Card from "./Card";
 
 type ColumnProps = {
@@ -18,6 +19,9 @@ export default function Column({ title, cardsData }: ColumnProps) {
           badges={card.badges}
         />
       ))}
+      <div className="flex justify-center">
+        <Button text="+" handleClick={() => null}></Button>
+      </div>
     </div>
   );
 }
