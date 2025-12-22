@@ -25,6 +25,14 @@ function App() {
           text="export data"
           handleClick={() => setInputValue(JSON.stringify(boardData))}
         />
+        <Button
+          text="reset fake board data"
+          handleClick={() => setBoardData(boardFakeData)}
+        ></Button>
+        <Button
+          text="clear board"
+          handleClick={() => setBoardData({ name: "New board", columns: [] })}
+        ></Button>
       </div>
     </div>
   );
