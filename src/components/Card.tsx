@@ -1,3 +1,5 @@
+import Badge from "./Badge";
+
 type CardProps = {
   title: string;
   description: string;
@@ -10,9 +12,7 @@ export default function Card({ title, description, badges }: CardProps) {
       <h1 className="text-center bg-gray-700">{title}</h1>
       <div className="p-2 flex gap-2">
         {badges.map((badge) => (
-          <div className="border-2 rounded pl-2 pr-2" key={badge}>
-            <p className="text-xs">{badge}</p>
-          </div>
+          <Badge badgeName={badge} />
         ))}
         <div className="cursor-pointer select-none">+</div>
       </div>
