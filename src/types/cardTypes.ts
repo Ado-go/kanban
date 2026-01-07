@@ -1,5 +1,5 @@
 type CardDataType = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   badges: string[];

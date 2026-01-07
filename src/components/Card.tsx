@@ -2,14 +2,15 @@ import Badge from "./Badge";
 import { useDraggable } from "@dnd-kit/core";
 
 type CardProps = {
+  id: string;
   title: string;
   description: string;
   badges: string[];
 };
 
-export default function Card({ title, description, badges }: CardProps) {
+export default function Card({ id, title, description, badges }: CardProps) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: title,
+    id: id,
   });
 
   const style = transform

@@ -10,6 +10,7 @@ export default function Board({ name, columns }: BoardTypes) {
         {columns.map((column) => (
           <Column
             key={column.id}
+            id={column.id}
             title={column.title}
             cardsData={column.cards}
           />

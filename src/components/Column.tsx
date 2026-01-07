@@ -4,13 +4,14 @@ import Button from "./Button";
 import Card from "./Card";
 
 type ColumnProps = {
+  id: string;
   title: string;
   cardsData: CardDataType[];
 };
 
-export default function Column({ title, cardsData }: ColumnProps) {
+export default function Column({ id, title, cardsData }: ColumnProps) {
   const { isOver, setNodeRef } = useDroppable({
-    id: title,
+    id: id,
   });
 
   const style = isOver ? "border-2 border-blue-500" : "border-2";
@@ -20,6 +21,7 @@ export default function Column({ title, cardsData }: ColumnProps) {
       {cardsData.map((card) => (
         <Card
           key={card.id}
+          id={card.id}
           title={card.title}
           description={card.description}
           badges={card.badges}

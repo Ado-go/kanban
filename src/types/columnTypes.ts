@@ -1,7 +1,7 @@
 import type { CardDataType } from "./cardTypes";
 
 type ColumnDataType = {
-  id: number;
+  id: string;
   title: string;
   cards: CardDataType[];
 };
