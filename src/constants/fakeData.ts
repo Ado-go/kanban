@@ -33,3 +33,11 @@ export const boardFakeData = {
     },
   ],
 };
+
+export const bageFakeData = {
+  new: "blue",
+  fast: "green",
+  old: "yellow",
+  burnout: "white",
+  whistle: "red",
+};

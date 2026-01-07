@@ -1,11 +1,12 @@
 import { useState } from "react";
 import type { BoardTypes } from "./types/boardTypes";
-import { boardFakeData } from "./constants/fakeData";
+import { boardFakeData, bageFakeData } from "./constants/fakeData";
 import Board from "./components/Board";
 import Button from "./components/Button";
 
 function App() {
   const [boardData, setBoardData] = useState<BoardTypes>(boardFakeData);
+  const [badgeData, setBadgeData] = useState(bageFakeData);
   const [inputValue, setInputValue] = useState("");
 
   return (
@@ -27,7 +28,10 @@ function App() {
         />
         <Button
           text="reset fake board data"
-          handleClick={() => setBoardData(boardFakeData)}
+          handleClick={() => {
+            setBoardData(boardFakeData);
+            setBadgeData(bageFakeData);
+          }}
         ></Button>
         <Button
           text="clear board"
