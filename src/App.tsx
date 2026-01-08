@@ -13,7 +13,11 @@ function App() {
   return (
     <div className="m-5">
       <h1>Kanban-ana</h1>
-      <Board name={boardData.name} columns={boardData.columns} />
+      <Board
+        name={boardData.name}
+        columns={boardData.columns}
+        setBoardData={setBoardData}
+      />
       <input
         type="text"
         className="border"

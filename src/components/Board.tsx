@@ -1,8 +1,15 @@
 import type { BoardTypes } from "../types/boardTypes";
+import type { ColumnDataType } from "../types/columnTypes";
 import Column from "./Column";
 import Button from "./Button";
 
-export default function Board({ name, columns }: BoardTypes) {
+type BoardProps = {
+  name: string;
+  columns: ColumnDataType[];
+  setBoardData: React.Dispatch<React.SetStateAction<BoardTypes>>;
+};
+
+export default function Board({ name, columns, setBoardData }: BoardProps) {
   return (
     <div className="bg-gray-600 h-150 flex flex-col">
       <h1 className="bg-gray-700 p-3 font-bold">{name}</h1>
@@ -13,6 +20,7 @@ export default function Board({ name, columns }: BoardTypes) {
             id={column.id}
             title={column.title}
             cardsData={column.cards}
+            setBoardData={setBoardData}
           />
         ))}
         <Button text="+" handleClick={() => null} />

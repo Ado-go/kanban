@@ -1,5 +1,6 @@
 import Badge from "./Badge";
-import { useDraggable } from "@dnd-kit/core";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 type CardProps = {
   id: string;
@@ -9,17 +10,15 @@ type CardProps = {
 };
 
 export default function Card({ id, title, description, badges }: CardProps) {
-  const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: id,
-  });
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({
+      id: id,
+    });
 
-  const style = transform
-    ? {
-        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
-        cursor: "grabbing",
-      }
-    : undefined;
-
+  const style = {
+    transform: CSS.Translate.toString(transform),
+    transition,
+  };
   return (
     <div
       ref={setNodeRef}
