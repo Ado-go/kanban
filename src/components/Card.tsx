@@ -18,13 +18,20 @@ export default function Card({
   badgeData,
   badges,
 }: CardProps) {
-  const { attributes, listeners, setNodeRef, transform, transition } =
-    useSortable({
-      id: id,
-    });
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({
+    id: id,
+  });
 
   const style = {
     transform: CSS.Translate.toString(transform),
+    zIndex: isDragging ? "10" : "1",
     transition,
   };
   return (
@@ -33,7 +40,7 @@ export default function Card({
       style={style}
       {...listeners}
       {...attributes}
-      className="m-2 border-2 bg-gray-500 hover:cursor-grab"
+      className="m-2 border-2 bg-gray-500 hover:cursor-grab relative"
     >
       <h1 className="text-center bg-gray-700">{title}</h1>
       <div className="p-2 flex gap-2">
