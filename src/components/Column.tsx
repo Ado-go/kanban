@@ -17,11 +17,13 @@ import {
 import Button from "./Button";
 import Card from "./Card";
 import type { BoardTypes } from "../types/boardTypes";
+import type { BadgeTypes } from "../types/badgeTypes";
 
 type ColumnProps = {
   id: string;
   title: string;
   cardsData: CardDataType[];
+  badgeData: BadgeTypes;
   setBoardData: React.Dispatch<React.SetStateAction<BoardTypes>>;
 };
 
@@ -29,6 +31,7 @@ export default function Column({
   id,
   title,
   cardsData,
+  badgeData,
   setBoardData,
 }: ColumnProps) {
   const sensors = useSensors(
@@ -79,6 +82,7 @@ export default function Column({
               id={card.id}
               title={card.title}
               description={card.description}
+              badgeData={badgeData}
               badges={card.badges}
             />
           ))}

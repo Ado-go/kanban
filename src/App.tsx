@@ -16,6 +16,7 @@ function App() {
       <Board
         name={boardData.name}
         columns={boardData.columns}
+        badgeData={badgeData}
         setBoardData={setBoardData}
       />
       <input

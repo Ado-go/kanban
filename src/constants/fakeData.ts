@@ -35,9 +35,9 @@ export const boardFakeData = {
 };
 
 export const bageFakeData = {
-  new: "blue",
-  fast: "green",
-  old: "yellow",
+  new: "lightblue",
+  fast: "lightgreen",
+  old: "lightyellow",
   burnout: "white",
-  whistle: "red",
+  whistle: "lightcoral",
 };
